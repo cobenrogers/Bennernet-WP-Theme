@@ -27,7 +27,7 @@ get_header();
 
                     <!-- Action Bar with Print/Email -->
                     <div class="action-bar no-print">
-                        <button class="btn btn-primary btn-print" onclick="window.print()">
+                        <button class="btn btn-primary btn-print">
                             <i class="fas fa-print"></i> <?php esc_html_e( 'Print', 'bennernet' ); ?>
                         </button>
                         <a href="<?php echo esc_url( bennernet_get_email_link() ); ?>" class="btn btn-primary btn-email">
