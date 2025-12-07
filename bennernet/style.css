@@ -439,15 +439,24 @@ li {
 .header-search-form .search-form {
   display: flex;
   gap: 0;
+  align-items: stretch;
+}
+
+.header-search-form .search-form label {
+  flex: 1;
+  display: flex;
 }
 
 .header-search-form .search-field {
-  flex: 1;
-  padding: 0.625rem 0.875rem;
+  width: 100%;
+  height: 38px;
+  padding: 0 0.875rem;
   font-size: 0.9rem;
+  line-height: 38px;
   border: 1px solid var(--border);
   border-right: none;
   border-radius: var(--radius) 0 0 var(--radius);
+  box-sizing: border-box;
 }
 
 .header-search-form .search-field:focus {
@@ -456,13 +465,19 @@ li {
 }
 
 .header-search-form .search-submit {
-  padding: 0.625rem 0.875rem;
+  height: 38px;
+  width: 38px;
+  padding: 0;
   background: var(--primary);
   color: #fff;
   border: 1px solid var(--primary);
   border-radius: 0 var(--radius) var(--radius) 0;
   cursor: pointer;
   transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .header-search-form .search-submit:hover {
@@ -471,7 +486,8 @@ li {
 }
 
 .header-search-form .search-submit i {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -698,19 +714,28 @@ label {
   color: var(--text);
 }
 
-/* Search Form (Sidebar/Widget) */
+/* Search Form (Sidebar/Widget/Footer) */
 .search-form {
   display: flex;
   gap: 0;
+  align-items: stretch;
+}
+
+.search-form label {
+  flex: 1;
+  display: flex;
 }
 
 .search-form .search-field {
-  flex: 1;
-  padding: 0.625rem 0.875rem;
+  width: 100%;
+  height: 38px;
+  padding: 0 0.875rem;
   font-size: 0.9rem;
+  line-height: 38px;
   border: 1px solid var(--border);
   border-right: none;
   border-radius: var(--radius) 0 0 var(--radius);
+  box-sizing: border-box;
 }
 
 .search-form .search-field:focus {
@@ -719,14 +744,19 @@ label {
 }
 
 .search-form .search-submit {
+  height: 38px;
+  width: 38px;
+  padding: 0;
   flex-shrink: 0;
-  padding: 0.625rem 0.875rem;
   background: var(--primary);
   color: #fff;
   border: 1px solid var(--primary);
   border-radius: 0 var(--radius) var(--radius) 0;
   cursor: pointer;
   transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-form .search-submit:hover {
@@ -735,7 +765,8 @@ label {
 }
 
 .search-form .search-submit i {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1;
 }
 
 /* ==========================================================================
