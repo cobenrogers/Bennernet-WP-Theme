@@ -110,6 +110,18 @@ function bennernet_customize_register( $wp_customize ) {
         'type'    => 'checkbox',
     ) );
 
+    // Show Search in Header
+    $wp_customize->add_setting( 'bennernet_show_header_search', array(
+        'default'           => true,
+        'sanitize_callback' => 'bennernet_sanitize_checkbox',
+    ) );
+
+    $wp_customize->add_control( 'bennernet_show_header_search', array(
+        'label'   => __( 'Show Search in Header', 'bennernet' ),
+        'section' => 'bennernet_header',
+        'type'    => 'checkbox',
+    ) );
+
     // ============================
     // SOCIAL MEDIA SECTION
     // ============================

@@ -44,20 +44,33 @@
 
         <nav id="site-navigation" class="main-navigation">
             <div class="container">
-                <button class="menu-toggle no-print" aria-controls="primary-menu" aria-expanded="false">
-                    <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'bennernet' ); ?></span>
-                    <span class="hamburger"></span>
-                </button>
+                <div class="nav-wrapper">
+                    <button class="menu-toggle no-print" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="screen-reader-text"><?php esc_html_e( 'Menu', 'bennernet' ); ?></span>
+                        <span class="hamburger"></span>
+                    </button>
 
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'primary',
-                    'menu_id'        => 'primary-menu',
-                    'menu_class'     => 'nav-menu',
-                    'container'      => false,
-                    'fallback_cb'    => false,
-                ) );
-                ?>
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'menu_id'        => 'primary-menu',
+                        'menu_class'     => 'nav-menu',
+                        'container'      => false,
+                        'fallback_cb'    => false,
+                    ) );
+                    ?>
+
+                    <?php if ( get_theme_mod( 'bennernet_show_header_search', true ) ) : ?>
+                        <div class="header-search no-print">
+                            <button class="search-toggle" aria-label="<?php esc_attr_e( 'Toggle search', 'bennernet' ); ?>">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div class="header-search-form">
+                                <?php get_search_form(); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </nav>
     </header>

@@ -44,6 +44,42 @@
     }
 
     /**
+     * Header Search Toggle
+     */
+    function initHeaderSearch() {
+        const searchToggle = document.querySelector('.search-toggle');
+        const headerSearch = document.querySelector('.header-search');
+        const searchField = document.querySelector('.header-search-form .search-field');
+
+        if (!searchToggle || !headerSearch) return;
+
+        searchToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            headerSearch.classList.toggle('is-open');
+
+            // Focus on search field when opened
+            if (headerSearch.classList.contains('is-open') && searchField) {
+                setTimeout(() => searchField.focus(), 100);
+            }
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function(e) {
+            if (!headerSearch.contains(e.target)) {
+                headerSearch.classList.remove('is-open');
+            }
+        });
+
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && headerSearch.classList.contains('is-open')) {
+                headerSearch.classList.remove('is-open');
+                searchToggle.focus();
+            }
+        });
+    }
+
+    /**
      * Smooth Scroll for Anchor Links
      */
     function initSmoothScroll() {
@@ -288,6 +324,7 @@
      */
     function init() {
         initMobileMenu();
+        initHeaderSearch();
         initSmoothScroll();
         initSlider();
         initPrintButton();
