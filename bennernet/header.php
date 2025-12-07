@@ -62,12 +62,7 @@
 
                     <?php if ( get_theme_mod( 'bennernet_show_header_search', true ) ) : ?>
                         <div class="header-search no-print">
-                            <button class="search-toggle" aria-label="<?php esc_attr_e( 'Toggle search', 'bennernet' ); ?>">
-                                <i class="fas fa-search"></i>
-                            </button>
-                            <div class="header-search-form">
-                                <?php get_search_form(); ?>
-                            </div>
+                            <?php get_search_form(); ?>
                         </div>
                     <?php endif; ?>
                 </div>
